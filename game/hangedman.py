@@ -2,6 +2,7 @@
 # Hangman the video game
 
 from random import *
+import pandas as pd
 
 player_score = 0
 computer_score = 0
@@ -73,7 +74,8 @@ def start():
     scores()
 
 def game():
-    dictonary = ["gnu", "kernel", "linux", "mageia", "pingouin", "ubuntu"]
+    df = pd.read_excel("datahangedman/words.xlsx")
+    dictonary = df.words.values
     word = choice(dictonary)
     word_length = len(word)
     clue = word_length * ["_"]
