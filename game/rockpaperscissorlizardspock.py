@@ -33,14 +33,37 @@ def game():
 def move():
     while True:
         #player = input("Rock = 1\nPaper = 2\nScissors = 3\nLizard = 4\nSpock = 5\nMake a move:")
-        player = input("Rock\nPaper\nScissors\nLizard\nSpock\nMake a move:")
+        player = input("If you want to read the rules types rules else \nRock\nPaper\nScissors\nLizard\nSpock\nMake a move:")
         try:
             player = str(player).lower()
-            if player in ("rock", "paper", "scissors", "lizard", "spock"):
+            if "rule" in player or "rules" in player:
+                print(20*"-")
+                print("the rules :")
+                for name in winning:
+                    for names in winning[name]:
+                        print(winning[name][names])
+                print(20*"-")
+            elif "rock" in player or "rocks" in player:
+                player = "rock"
                 return player
+            elif "paper" in player or "papers" in player:
+                player = "paper"
+                return player
+            elif "scissors" in player or "scissor" in player:
+                player = "scissors"
+                return player
+            elif "lizard" in player or "lizards" in player:
+                player = "lizard"
+                return player
+            elif "spoc" in player:
+                player = "spock"
+                return player
+            #if player in ("rock", "paper", "scissors", "lizard", "spock"):
+            #    return player
         except ValueError:
             pass
-        print("Oops! I didn't understand that. Please enter rock, paper, scissors, lizard or Spock.")
+        print("Oops! I didn't understand that. Please make a move enter rock, paper, scissors, lizard or Spock.")
+        print("Or rule to get the rules.")
 
 def result(player, computer):
     print("1...")
@@ -49,7 +72,7 @@ def result(player, computer):
     time.sleep(1)
     print("3!")
     time.sleep(0.5)
-    print("Computer threw {0} !".format(computer))
+    print("Computer threw " + computer.capitalize() + " !")
     global player_score, computer_score
     if player == computer:
         print("Tie game.")
