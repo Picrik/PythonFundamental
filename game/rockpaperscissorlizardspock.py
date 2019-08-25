@@ -62,7 +62,7 @@ def move():
             #    return player
         except ValueError:
             pass
-        print("Oops! I didn't understand that. Please make a move enter rock, paper, scissors, lizard or Spock.")
+        print("It's not a move. Please make a move enter rock, paper, scissors, lizard or Spock.")
         print("Or rule to get the rules.")
 
 def result(player, computer):

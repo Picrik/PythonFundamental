@@ -74,7 +74,7 @@ def start():
     scores()
 
 def game():
-    df = pd.read_excel("datahangedman/words.xlsx")
+    df = pd.read_excel("game/datahangedman/words.xlsx")
     dictonary = df.words.values
     word = choice(dictonary)
     word_length = len(word)
