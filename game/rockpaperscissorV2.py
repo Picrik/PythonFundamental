@@ -2,7 +2,7 @@
 # Rock, Paper & Scissors the video game
 
 from tkinter import *
-from ttk import *
+from tkinter.ttk import *
 import random
 
 def gui():

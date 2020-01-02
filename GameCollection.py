@@ -3,7 +3,7 @@
 
 from tkinter import *
 
-from game import rockpaperscissorV2, hangedman, pokerdice
+from game import rockpaperscissorV2, hangedmanV2, pokerdice
 
 root = Tk()
 root.title ("Mon interface de jeux")
@@ -18,7 +18,7 @@ intro.pack(side = TOP)
 rps_button = Button(mainframe, text = "Caillou, Papier, Ciseaux", command = rockpaperscissorV2 .gui)
 rps_button.pack()
 
-hm_button = Button(mainframe, text = "Pendu", command = hangedman.start)
+hm_button = Button(mainframe, text = "Pendu", command = hangedmanV2.gui)
 hm_button.pack()
 
 pd_button = Button(mainframe, text = "Poker au dés", command = pokerdice.start)
